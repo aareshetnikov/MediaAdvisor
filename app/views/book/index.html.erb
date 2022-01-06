@@ -1,0 +1,15 @@
+<div class="box">
+<%= form_tag home_books_path, method: "get" do %>
+  <% label_tag :q %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+
+<% end %>
+Книги
+<% @books.each do |book|%>
+  <div>
+    <%=link_to book.name, "books/#{book.id}" %>
+  </div>
+<% end %>
+
+</div>

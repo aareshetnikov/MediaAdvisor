@@ -1,0 +1,12 @@
+<%= form_tag home_movies_path, method: "get" do %>
+  <% label_tag :q %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+
+<% end %>
+Фильмы
+<% @movies.each do |movie|%>
+  <div>
+    <%=link_to movie.name, "movies/#{movie.id}" %>
+  </div>
+<% end %>

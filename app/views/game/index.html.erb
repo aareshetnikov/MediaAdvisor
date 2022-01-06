@@ -1,0 +1,13 @@
+
+<%= form_tag home_games_path, method: "get" do %>
+  <% label_tag :q %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+
+<% end %>
+Игры
+<% @games.each do |game|%>
+  <div>
+    <%=link_to game.name, "games/#{game.id}" %>
+  </div>
+<% end %>
